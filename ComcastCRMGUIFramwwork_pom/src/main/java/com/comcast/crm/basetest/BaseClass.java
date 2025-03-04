@@ -43,12 +43,12 @@ public class BaseClass {
 		dbLib.getDbConnection();
 	}
 
-	//@Parameters("BROWSER")
+	@Parameters("BROWSER")
 	@BeforeClass(groups= {"smokeTest","regressionTest"})
-	public void congigBC() throws Throwable {
+	public void congigBC(String browser) throws Throwable {
 		System.out.println("=====Launch the BROWSER=====");
-		String BROWSER= //browser;
-				System.getProperty("browser",fLib.getDataFromPropertiesFile("browser"));
+		String BROWSER= browser;
+				//System.getProperty("browser",fLib.getDataFromPropertiesFile("browser"));
 		String URL = System.getProperty("url",fLib.getDataFromPropertiesFile("url"));
 		if(BROWSER.equals("chrome")){
 			driver=new ChromeDriver();
