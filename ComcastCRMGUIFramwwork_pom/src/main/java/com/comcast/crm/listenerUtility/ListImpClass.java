@@ -81,6 +81,8 @@ public class ListImpClass implements ITestListener, ISuiteListener {
 		   UtilityClassObject.getTest().addScreenCaptureFromBase64String(filePath, testName+"_"+time);
 		   UtilityClassObject.getTest().log(Status.FAIL,result.getMethod().getMethodName()+"====> FAILED <=====");
 		   UtilityClassObject.getTest().info(MarkupHelper.createLabel("highlight", ExtentColor.RED));
+		   UtilityClassObject.getTest().log(Status.FAIL, result.getThrowable());//to get the exception in th report
+		   
 	}
 
 	@Override
